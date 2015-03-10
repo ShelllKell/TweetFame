@@ -17,4 +17,12 @@ class TweetReader
     @client.user_timeline(username)
   end
 
+  def tweet_tweet(status)
+    @client.update(status)
+  end
+
+  def my_followers
+    @client.followers("shelllkell")
+  end
+
 end
