@@ -1,0 +1,16 @@
+<h1>Tweets</h1>
+
+  <% @tweet_reader.shelbys_tweets.each do |tweet| %>
+    <li><%= tweet.text  %></li>
+  <% end %>
+
+<h4>Most recent tweets from any user:</h4>
+
+  <%= form_tag '/', method: :get %>
+  <%= label_tag("username") %>
+  <%= text_field_tag(:username) %>
+  <%= submit_tag %>
+
+  <% @others_tweets.each do |tweet| %>
+    <li><%= tweet.text  %></li>
+  <% end %>
