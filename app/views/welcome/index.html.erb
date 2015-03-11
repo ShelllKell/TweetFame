@@ -1,25 +1,34 @@
-<h4>ShelllKell's Tweets</h4>
+<!-- <h4>ShelllKell's Tweets</h4>
 
   <% @tweet_reader.shelbys_tweets.each do |tweet| %>
     <li><%= tweet.text  %></li>
-  <% end %>
+  <% end %> -->
 
-<h4>Most recent tweets from any user:</h4>
+<h4>Most recent tweets from <%= params[:username].upcase %>:</h4>
 
-  <%= form_tag '/', method: :get do %>
-  <%= label_tag("username") %>
-  <%= text_field_tag(:username) %>
-  <%= submit_tag %>
-  <% end %>
-
+<blockquote class='pull-left'>
   <% @others_tweets.each do |tweet| %>
-    <li><%= tweet.text  %></li>
+    <li>
+      <div class="well">
+
+        <%= tweet.text  %>
+        <small><%= tweet.user.name %> | <%= tweet.user.created_at %></small>
+
+    </div>
+    </li>
   <% end %>
+</blockquote>
 
 <h4>Wanna send a tweet?</h4>
-
+<!--
   <%= form_tag '/' do %>
   <%= label_tag("Tweet") %>
   <%= text_field_tag(:status) %>
   <%= submit_tag "Send Yo Tweet" %>
+  <% end %>
+   -->
+  <%= form_tag '/', class: "navbar-form navbar-left" do %>
+  <%= label_tag("Tweet") %>
+  <%= text_field_tag(:status) %>
+  <%= submit_tag "Send yo tweet", class: "btn btn-default" %>
   <% end %>

@@ -21,8 +21,8 @@ class TweetReader
     @client.update(status)
   end
 
-  def my_followers
-    @client.followers("shelllkell")
-  end
+  # def my_followers
+  #   @client.followers("shelllkell")
+  # end
 
 end
