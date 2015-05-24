@@ -27,6 +27,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'twitter'
 
+gem 'rspec'
 
 
 # Use ActiveModel has_secure_password

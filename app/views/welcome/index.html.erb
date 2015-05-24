@@ -1,28 +1,62 @@
-<!-- <h4>ShelllKell's Tweets</h4>
+<div class='col-md-6'>
+  <h4>Most recent tweets from Shelby:</h4>
 
-  <% @tweet_reader.shelbys_tweets.each do |tweet| %>
-    <li><%= tweet.text  %></li>
-  <% end %> -->
-
-<h4>Most recent tweets from <%= params[:username] %>:</h4>
-
-<blockquote class='pull-left'>
-  <% @others_tweets.each do |tweet| %>
+  <blockquote>
+    <% @tweet_reader.shelbys_tweets.each do |tweet| %>
     <li>
       <div class="well">
-
         <%= tweet.text  %>
-        <small><%= tweet.user.name %></small>
-
-    </div>
+      <br>
+        <div class="status">
+          <% if tweet.favorite_count > tweet.retweet_count %>
+            Favorited like a boss: <%= tweet.favorite_count %>
+          <% elsif tweet.favorite_count == 0 || tweet.retweet_count == 0 %>
+            * * * you're a loser * * *
+          <% elsif %>
+            Imitation is the sincerest form of flattery: <%= tweet.favorite_count %>
+          <% else tweet.favorite_count == tweet.retweet_count %>
+            TIE! <%= tweet.favorite_count %>
+          <% end %>
+        </div>
+          <small><%= tweet.user.name %></small>
+      </div>
     </li>
-  <% end %>
-</blockquote>
+    <% end %>
+  </blockquote>
+</div>
 
-<h4>Wanna send a tweet?</h4>
+<div class='col-md-6'>
+  <h4>Most recent tweets from <%= params[:username] %>:</h4>
+
+  <blockquote>
+    <% @others_tweets.each do |tweet| %>
+    <li>
+      <div class="well">
+        <%= tweet.text  %>
+      <br>
+        <div class="status">
+          <% if tweet.favorite_count > tweet.retweet_count %>
+            People liked this more: <%= tweet.favorite_count %>
+          <% elsif tweet.favorite_count == 0 || tweet.retweet_count == 0 %>
+            * * * you're a loser * * *
+          <% elsif %>
+            People wanted to share this more: <%= tweet.favorite_count %>
+          <% else tweet.favorite_count == tweet.retweet_count %>
+            A Liked and Retweeted TIE! <%= tweet.favorite_count %>
+          <% end %>
+          </div>
+          <small><%= tweet.user.name %></small>
+      </div>
+    </li>
+    <% end %>
+  </blockquote>
+</div>
+
+
+<!-- <h4>Wanna send a tweet?</h4>
 
   <%= form_tag '/', class: "navbar-form navbar-left" do %>
   <%= label_tag("Tweet") %>
   <%= text_field_tag(:status) %>
   <%= submit_tag "Send yo tweet", class: "btn btn-default" %>
-  <% end %>
+  <% end %> -->
