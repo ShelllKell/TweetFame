@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root 'welcome#index'
+  root 'tweets#index'
 
   get '/login' => 'sessions#new', as: :login
   post '/login' => 'sessions#create'
@@ -8,8 +8,8 @@ Rails.application.routes.draw do
   get '/signup' => 'users#new', as: :signup
   post '/signup' => 'users#create'
 
-  get '/tweets' => 'tweets#index', as: :tweets
-  post '/tweets' => 'tweets#index'
+  get '/' => 'tweets#index', as: :tweets
+  post '/' => 'tweets#index'
 
   resources :users
 

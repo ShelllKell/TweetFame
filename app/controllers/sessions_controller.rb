@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
     @user = User.find_by(email: params[:user][:email])
     if @user && @user.authenticate(params[:user][:password])
       session[:user_id] = @user.id
-      redirect_to root_path
+      redirect_to tweets_path
     else
       @user = User.new(email: params[:user][:email])
       @user.errors[:base] << "Username / password is invalid"
