@@ -18,18 +18,10 @@
         <span class="icon-bar"></span>
       </button>
       <a class="navbar-brand">Tweet <span class="glyphicon glyphicon-star"></span></a>
-      <a class="navbar-brand">Fame <span class="glyphicon glyphicon-retweet"></span></a>
+      <a class="navbar-brand brand">Fame <span class="glyphicon glyphicon-retweet"></span></a>
     </div>
-
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <%= form_tag '/', method: :get, class: "navbar-form navbar-left" do %>
-      <div class="input">
-        <%= label_tag("Find someone on twitter and see how they stack up compared to ShelllKell") %>
-        <%= text_field_tag :username, nil, placeholder: "Enter username", class: "form-control" %>
-        <%= submit_tag "Search", class: "btn btn-default" %>
-      <% end %>
-      </div>
       <ul class="nav navbar-nav navbar-right">
+        <!-- <li><%= link_to "Log Out", logout_path %></li> -->
         <li><a href="http://twitter.com">Take me back to OG Twitter</a></li>
       </ul>
     </div>

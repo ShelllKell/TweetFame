@@ -22,3 +22,14 @@ h4 {
 .input {
   color: #FFE4E1;
 }
+
+.navbar-brand {
+  padding-left: 2rem;
+  brand {
+    padding-left: 1rem;
+  }
+}
+
+.navbar-brand brand {
+  padding-left: 1rem;
+}

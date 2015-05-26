@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" hash="2766695370">
+    <data-source source="LOCAL" name="Rails Tweeter: development" uuid="811d9c14-ede6-4aa9-b8e4-a07ee222b484">
+      <driver-ref>postgresql</driver-ref>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql:tweeter_development</jdbc-url>
+      <libraries />
+    </data-source>
+    <data-source source="LOCAL" name="Rails Tweeter: test" uuid="25968ecb-50e7-4023-a610-6a5a0427bf7f">
+      <driver-ref>postgresql</driver-ref>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql:tweeter_test</jdbc-url>
+      <libraries />
+    </data-source>
+    <data-source source="LOCAL" name="Rails Tweeter: production" uuid="8a1f4c8d-754a-4b39-83c3-a2d05d399aba">
+      <driver-ref>postgresql</driver-ref>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql:tweeter_production</jdbc-url>
+      <libraries />
+    </data-source>
+  </component>
+</project>
+
