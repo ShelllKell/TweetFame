@@ -48,13 +48,13 @@
       <br>
         <div class="status">
           <% if tweet.favorite_count > tweet.retweet_count %>
-            People liked this more: <%= tweet.favorite_count %>
+            Favorited like a boss: <%= tweet.favorite_count %>
           <% elsif tweet.favorite_count == 0 || tweet.retweet_count == 0 %>
             * * * you're a loser * * *
           <% elsif %>
-            People wanted to share this more: <%= tweet.favorite_count %>
+            Imitation is the sincerest form of flattery: <%= tweet.favorite_count %>
           <% else tweet.favorite_count == tweet.retweet_count %>
-            A Liked and Retweeted TIE! <%= tweet.favorite_count %>
+            TIE! <%= tweet.favorite_count %>
           <% end %>
           </div>
           <small><%= tweet.user.name %></small>
