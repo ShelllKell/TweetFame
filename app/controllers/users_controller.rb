@@ -12,6 +12,7 @@ class UsersController < ApplicationController
     @user = User.new(allowed_parameters)
 
     if @user.save
+      session[:user_id] = @user.id
       redirect_to tweets_path
     else
       render :new

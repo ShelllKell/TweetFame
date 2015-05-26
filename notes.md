@@ -21,4 +21,4 @@
 - Landing Page
 
 ##### More
-- In adding a backend URL - /assets/images/backend_typo.png
+- In adding a backend URL

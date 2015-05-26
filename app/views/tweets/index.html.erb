@@ -1,13 +1,16 @@
-<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+<h3>Welcome, <%= current_user[:name] %>!</h3>
+<h5>Search someone's username on Twitter and see how they stack up compared to ShelllKell.</h5>
+<br>
 
-    <%= form_tag '/', method: :get, class: "navbar-form navbar-left" do %>
-    <div class="input">
-      <%= label_tag("Find someone on twitter and see how they stack up compared to ShelllKell") %>
-      <%= text_field_tag :username, nil, placeholder: "Enter username", class: "form-control" %>
-      <%= submit_tag "Search", class: "btn btn-default" %>
-      <% end %>
+<%= form_tag '/tweets', method: :get, class: "navbar-form navbar-left" do %>
+  <div class="input">
+    <%= label_tag("Username") %>
+    <%= text_field_tag :username, nil, placeholder: "Enter username", class: "form-control" %>
+    <%= submit_tag "Search", class: "btn btn-default" %>
+<% end %>
   </div>
-<div class='col-md-6'>
+
+<div class='col-md-4'>
   <h4>Most recent tweets from Shelby:</h4>
 
   <blockquote>
@@ -34,7 +37,7 @@
   </blockquote>
 </div>
 
-<div class='col-md-6'>
+<div class='col-md-4'>
   <h4>Most recent tweets from <%= params[:username] %>:</h4>
 
   <blockquote>

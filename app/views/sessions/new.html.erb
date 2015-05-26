@@ -1,4 +1,10 @@
-<%= form_for @user do |f| %>
+<%= form_for @user, url: login_path do |f| %>
+
+<% if @user.errors.any? %>
+  <% @user.errors.full_messages.each do |message| %>
+    <li> <%= message %> </li>
+  <% end %>
+<% end %>
 
     <%= f.label :email %>
     <%= f.email_field :email, autofocus: true %>
