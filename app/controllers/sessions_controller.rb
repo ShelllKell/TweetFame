@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-  skip_before_action :ensure_current_user
+  # skip_before_action :ensure_current_user
 
   def new
     @user = User.new
@@ -19,7 +19,7 @@ class SessionsController < ApplicationController
 
   def destroy
     session.destroy
-    redirect_to root_path
+    redirect_to 'https://tweetfame.bowtied.io/'
   end
 
 end
