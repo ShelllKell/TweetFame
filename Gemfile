@@ -14,6 +14,8 @@ gem 'twitter'
 gem 'rspec'
 gem 'pg'
 gem 'bowtie-io'
+gem 'pry-byebug'
+gem 'pry-rails'
 
 gem 'bcrypt', '~> 3.1.7'
 
