@@ -2,6 +2,7 @@
 <h5>Search someone's username on Twitter and see how they stack up compared to ShelllKell.</h5>
 <br>
 
+<div class='username'>
 <%= form_tag '/tweets', method: :get, class: "navbar-form navbar-left" do %>
   <div class="input">
     <%= label_tag("Username") %>
@@ -9,6 +10,14 @@
     <%= submit_tag "Search", class: "btn btn-default" %>
 <% end %>
   </div>
+<!-- <%= form_tag '/tweets', method: :get, class: "navbar-form navbar-left" do %>
+  <div class="input">
+    <%= label_tag("Username") %>
+    <%= text_field_tag :username_new, nil, placeholder: "Enter username", class: "form-control" %>
+    <%= submit_tag "Search", class: "btn btn-default" %>
+<% end %>
+  </div> -->
+</div>
 
 <div class='col-md-4'>
   <h4>Most recent tweets from Shelby:</h4>
