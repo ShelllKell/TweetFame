@@ -1,28 +1,34 @@
-== README
+Example of using the tweets API (use in the BT frontend):
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+```html
+  <!-- /tweets.html -->
 
-Things you may want to cover:
+  <!-- Template to render tweets -->
+  <script id="entry-template" type="text/x-handlebars-template" data-template-name="tweets">
+    <div class="tweets col-md-4">
+      <h4>Most recent tweets from {{username}}</h4>
 
-* Ruby version
+      {{#each tweet in tweets}}
+        {{tweet.text}}
+      {{/each}}
 
-* System dependencies
+      ...
+    </div>
+  </script>
 
-* Configuration
+  <!-- Request and render tweets -->
+  <script type="text/javascript">
+    // Compile the handlebars template
+    var source = $("#entry-template").html();
+    var template = Handlebars.compile(source);
 
-* Database creation
+    // Request the tweets from the backend and render them into the page
+    $.get("/tweets.json", function(response){
+      var renderedTweets = template(response);
+      $("#tweets").html(renderedTweets);
+    });
+  </script>
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+  <!-- Container for tweets on page -->
+  <div id="tweets"></div>
+```

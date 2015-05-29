@@ -9,11 +9,7 @@ class TweetReader
     end
   end
 
-  def shelbys_tweets
-    @client.user_timeline("shelllkell")
-  end
-
-  def anyones_tweets(username)
+  def tweets(username)
     @client.user_timeline(username)
   end
 
